@@ -298,6 +298,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@navettejs/navettejs@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@navettejs/navettejs@workspace:."
+  dependencies:
+    "@types/node": "npm:^22.14.1"
+    prettier: "npm:3.5.3"
+    typescript: "npm:~5.7.2"
+    vite: "npm:^6.2.0"
+    vite-plugin-cp: "npm:^6.0.0"
+    vite-plugin-dts: "npm:4.5.0"
+  languageName: unknown
+  linkType: soft
+
 "@npmcli/agent@npm:^3.0.0":
   version: 3.0.0
   resolution: "@npmcli/agent@npm:3.0.0"
@@ -1601,18 +1614,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"navette@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "navette@workspace:."
-  dependencies:
-    "@types/node": "npm:^22.14.1"
-    typescript: "npm:~5.7.2"
-    vite: "npm:^6.2.0"
-    vite-plugin-cp: "npm:^6.0.0"
-    vite-plugin-dts: "npm:4.5.0"
-  languageName: unknown
-  linkType: soft
-
 "negotiator@npm:^1.0.0":
   version: 1.0.0
   resolution: "negotiator@npm:1.0.0"
@@ -1736,6 +1737,15 @@ __metadata:
     picocolors: "npm:^1.1.1"
     source-map-js: "npm:^1.2.1"
   checksum: 10c0/b75510d7b28c3ab728c8733dd01538314a18c52af426f199a3c9177e63eb08602a3938bfb66b62dc01350b9aed62087eabbf229af97a1659eb8d3513cec823b3
+  languageName: node
+  linkType: hard
+
+"prettier@npm:3.5.3":
+  version: 3.5.3
+  resolution: "prettier@npm:3.5.3"
+  bin:
+    prettier: bin/prettier.cjs
+  checksum: 10c0/3880cb90b9dc0635819ab52ff571518c35bd7f15a6e80a2054c05dbc8a3aa6e74f135519e91197de63705bcb38388ded7e7230e2178432a1468005406238b877
   languageName: node
   linkType: hard
 

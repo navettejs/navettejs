@@ -4,9 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "prettify": "prettier --write ."
   },
   "main": "./dist/navette.umd.js",
   "module": "./dist/navette.es.js",
@@ -19,6 +18,7 @@
   "types": "./dist/main.d.ts",
   "devDependencies": {
     "@types/node": "^22.14.1",
+    "prettier": "3.5.3",
     "typescript": "~5.7.2",
     "vite": "^6.2.0",
     "vite-plugin-cp": "^6.0.0",

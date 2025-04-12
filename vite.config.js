@@ -1,6 +1,6 @@
-import path from 'node:path'
+import path from 'node:path';
 import { defineConfig } from 'vite';
-import dts from 'vite-plugin-dts'
+import dts from 'vite-plugin-dts';
 import cp from 'vite-plugin-cp';
 
 export default defineConfig({
@@ -9,12 +9,12 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, 'src/main.js'),
       name: 'navette',
-      fileName: (format) => `navette.${format}.js`
-    }
+      fileName: (format) => `navette.${format}.js`,
+    },
   },
   plugins: [
     dts({
-      rollupTypes: true
+      rollupTypes: true,
     }),
     cp({
       targets: [
@@ -29,15 +29,21 @@ export default defineConfig({
             delete pkg['devDependencies'];
             delete pkg['packageManager'];
 
-            return JSON.stringify({
-              ...pkg,
-              private: false
-            }, null, 2)
-              // Replace all relative path to ./dist with ./
-              .replace(/"\.\/dist\//g, '"./');
-          }
-        }
-      ]
-    })
-  ]
+            return (
+              JSON.stringify(
+                {
+                  ...pkg,
+                  private: false,
+                },
+                null,
+                2,
+              )
+                // Replace all relative path to ./dist with ./
+                .replace(/"\.\/dist\//g, '"./')
+            );
+          },
+        },
+      ],
+    }),
+  ],
 });

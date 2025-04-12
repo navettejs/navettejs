@@ -1,6 +1,3 @@
-import {Topic, TopicMode} from "./topic.ts";
+import { Topic, TopicMode } from './topic.ts';
 
-export type {
-  Topic,
-  TopicMode
-};
+export type { Topic, TopicMode };
