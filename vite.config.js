@@ -28,6 +28,7 @@ export default defineConfig({
             delete pkg['scripts'];
             delete pkg['devDependencies'];
             delete pkg['packageManager'];
+            delete pkg['lint-staged'];
 
             return (
               JSON.stringify(
