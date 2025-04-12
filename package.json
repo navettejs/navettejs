@@ -1,5 +1,5 @@
 {
-  "name": "navette",
+  "name": "@navettejs/navettejs",
   "private": true,
   "version": "0.0.0",
   "type": "module",
