@@ -3,7 +3,7 @@ export enum TopicMode {
   STATE = 'STATE',
 }
 
-export interface Topic {
+export interface TopicConfig {
   id: string;
   mode: TopicMode;
 }

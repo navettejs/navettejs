@@ -5,7 +5,13 @@ import tseslint from 'typescript-eslint';
 import eslintConfigPrettier from 'eslint-config-prettier/flat';
 
 export default defineConfig([
-  globalIgnores(['./dist', './node_modules', './.pnp*', './vite.config.js']),
+  globalIgnores([
+    './coverage',
+    './dist',
+    './node_modules',
+    './.pnp*',
+    './vite.config.js',
+  ]),
   {
     files: ['**/*.{js,mjs,cjs,ts}'],
     plugins: { js },
