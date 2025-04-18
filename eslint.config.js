@@ -23,4 +23,17 @@ export default defineConfig([
   },
   tseslint.configs.recommended,
   eslintConfigPrettier,
+  {
+    files: ['**/*.test.ts', '**/*.test.tsx'],
+    rules: {
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          vars: 'all',
+          varsIgnorePattern: 'test_.*', // TypeScript type tests
+          argsIgnorePattern: '_',
+        },
+      ],
+    },
+  },
 ]);

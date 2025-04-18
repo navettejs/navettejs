@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "tsc && vite build",
-    "test": "jest",
+    "test": "tsc --project tsconfig.test.json && jest",
+    "lint": "eslint",
     "prettify": "prettier --write .",
     "postinstall": "husky"
   },
@@ -32,6 +33,7 @@
     "prettier": "3.5.3",
     "ts-jest": "^29.3.2",
     "ts-node": "^10.9.2",
+    "type-testing": "^0.2.0",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.29.1",
     "vite": "^6.2.0",
