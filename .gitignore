@@ -31,3 +31,6 @@ dist-ssr
 
 # Jest coverage
 coverage
+
+# ESLint
+.eslintcache

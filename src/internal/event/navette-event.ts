@@ -21,17 +21,25 @@ export class NavetteEvent extends CustomEvent<NavetteEventData> {
   }
 }
 
-// eslint-disable @typescript-eslint/no-explicit-any
 export function isNavetteEvent(event: Event): event is NavetteEvent {
-  return (
+  if (
     event.type.startsWith(EVENT_NAME_PREFIX) &&
-    !!(event as unknown as { detail: unknown }).detail &&
-    (((event as unknown as { detail: { type: unknown } }).detail.type ===
-      'value' &&
-      typeof (
-        event as unknown as { detail: { type: unknown; value?: unknown } }
-      ).detail.value === 'string') ||
-      (event as unknown as { detail: { type: unknown } }).detail.type === 'end')
-  );
+    'detail' in event &&
+    !!event.detail &&
+    typeof event.detail === 'object' &&
+    'type' in event.detail
+  ) {
+    switch (event.detail.type) {
+      case 'value':
+        return (
+          'value' in event.detail && typeof event.detail.value === 'string'
+        );
+      case 'end':
+        return true;
+      default:
+        return false;
+    }
+  } else {
+    return false;
+  }
 }
-// eslint-enable
