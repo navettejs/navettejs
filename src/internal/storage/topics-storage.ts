@@ -1,6 +1,8 @@
 import { TopicConfig } from '../topic/topic-config.ts';
 
-export interface TopicStorageData extends TopicConfig {
+export interface TopicStorageData {
+  config: TopicConfig;
+
   // Use a tuple to store any value, even null or undefined without conflict
   // with the plain "undefined" meaning no values yet.
   lastValue: [unknown] | undefined;
@@ -37,6 +39,6 @@ export class WindowTopicsStorage implements TopicsStorage {
   }
 
   setTopicData(topicData: TopicStorageData): void {
-    this.data.topics[topicData.id] = topicData;
+    this.data.topics[topicData.config.id] = topicData;
   }
 }

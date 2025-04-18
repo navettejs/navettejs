@@ -14,14 +14,18 @@ describe('WindowTopicsStorage', () => {
   };
 
   const testTopicData = {
-    id: 'test',
-    mode: TopicMode.EVENT,
+    config: {
+      id: 'test',
+      mode: TopicMode.EVENT,
+    },
     lastValue: ['value'],
   } satisfies TopicStorageData;
 
   const test2TopicData = {
-    id: 'test2',
-    mode: TopicMode.EVENT,
+    config: {
+      id: 'test2',
+      mode: TopicMode.EVENT,
+    },
     lastValue: ['otherValue'],
   } satisfies TopicStorageData;
 
@@ -51,8 +55,10 @@ describe('WindowTopicsStorage', () => {
   describe('setTopicData', () => {
     test('should update the topic data when called with an existing topic id', () => {
       const data = {
-        id: 'test2',
-        mode: TopicMode.REPLAY,
+        config: {
+          id: 'test2',
+          mode: TopicMode.REPLAY,
+        },
         lastValue: ['value'],
       } satisfies TopicStorageData;
       storage.setTopicData(data);
@@ -62,8 +68,10 @@ describe('WindowTopicsStorage', () => {
 
     test('should create the topic data when called on a new topic id', () => {
       const data = {
-        id: 'test3',
-        mode: TopicMode.EVENT,
+        config: {
+          id: 'test3',
+          mode: TopicMode.EVENT,
+        },
         lastValue: ['value'],
       } satisfies TopicStorageData;
       storage.setTopicData(data);

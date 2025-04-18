@@ -1,12 +1,18 @@
-import { EventTopic } from './event-topic.ts';
-import { JSONCompatible } from '../json/json-compatible.ts';
-import { TopicConfig } from './topic-config.ts';
-import { Subscriber } from '../subscriber.ts';
-import { TopicsStorage } from '../storage/topics-storage.ts';
+import { JSONCompatible } from '../../json/json-compatible.ts';
+import { BaseTopicConfig, TopicMode } from '../topic-config.ts';
+import { Subscriber } from '../../subscriber.ts';
+import { TopicsStorage } from '../../storage/topics-storage.ts';
+import { BaseEventTopic } from './base-event-topic.ts';
 
-export class ReplayTopic<T extends JSONCompatible<T>> extends EventTopic<T> {
+export interface ReplayTopicConfig extends BaseTopicConfig {
+  mode: TopicMode.REPLAY;
+}
+
+export class ReplayTopic<
+  T extends JSONCompatible<T>,
+> extends BaseEventTopic<T> {
   constructor(
-    config: TopicConfig,
+    config: ReplayTopicConfig,
     private readonly storage: TopicsStorage,
     readonly _window = window,
   ) {
@@ -40,7 +46,7 @@ export class ReplayTopic<T extends JSONCompatible<T>> extends EventTopic<T> {
 
   private updateLastValue(value: T) {
     this.storage.setTopicData({
-      ...this.config,
+      config: this.config,
       lastValue: [value],
     });
   }

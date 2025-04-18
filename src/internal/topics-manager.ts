@@ -22,13 +22,13 @@ export class TopicsManager {
       let topicData = this.storage.getTopicData(config.id);
       if (!topicData) {
         topicData = {
-          ...config,
+          config,
           lastValue: undefined,
         };
         this.storage.setTopicData(topicData);
       }
 
-      topic = createTopic<T>(topicData, this.storage);
+      topic = createTopic<T>(topicData.config, this.storage);
       this.knownTopics.set(config.id, topic);
     }
 

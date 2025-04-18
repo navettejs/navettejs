@@ -1,21 +1,21 @@
-import { Subscriber } from '../subscriber.ts';
-import { TopicConfig } from './topic-config.ts';
-import { Topic } from './topic.ts';
+import { JSONCompatible } from '../../json/json-compatible.ts';
+import { Topic } from '../topic.ts';
+import { Subscriber } from '../../subscriber.ts';
 import {
   getEventName,
   isNavetteEvent,
   NavetteEvent,
-} from '../event/navette-event.ts';
-import { JSONCompatible } from '../json/json-compatible.ts';
+} from '../../event/navette-event.ts';
+import { BaseTopicConfig } from '../topic-config.ts';
 
-export class EventTopic<T extends JSONCompatible<T>> implements Topic<T> {
+export class BaseEventTopic<T extends JSONCompatible<T>> implements Topic<T> {
   protected listeners = new Map<
     Subscriber<T>,
     EventListenerOrEventListenerObject
   >();
 
   constructor(
-    public readonly config: TopicConfig,
+    public readonly config: BaseTopicConfig,
     protected readonly _window = window,
   ) {}
 
