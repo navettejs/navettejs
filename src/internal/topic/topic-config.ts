@@ -1,9 +1,9 @@
 export enum TopicMode {
   EVENT = 'EVENT',
-  STATE = 'STATE',
+  REPLAY = 'REPLAY',
 }
 
-export interface TopicConfig {
+export type TopicConfig = {
   id: string;
   mode: TopicMode;
-}
+};

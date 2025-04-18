@@ -52,7 +52,7 @@ describe('WindowTopicsStorage', () => {
     test('should update the topic data when called with an existing topic id', () => {
       const data = {
         id: 'test2',
-        mode: TopicMode.STATE,
+        mode: TopicMode.REPLAY,
         lastValue: ['value'],
       } satisfies TopicStorageData;
       storage.setTopicData(data);

@@ -1,4 +1,4 @@
-import { isNavetteEvent, NavetteEvent } from './navette-event';
+import { isNavetteEvent, NavetteEvent } from './navette-event.ts';
 
 describe('NavetteEvent', () => {
   test('should create an event with the data', () => {

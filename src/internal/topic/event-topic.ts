@@ -9,14 +9,14 @@ import {
 import { JSONCompatible } from '../json/json-compatible.ts';
 
 export class EventTopic<T extends JSONCompatible<T>> implements Topic<T> {
-  private listeners = new Map<
+  protected listeners = new Map<
     Subscriber<T>,
     EventListenerOrEventListenerObject
   >();
 
   constructor(
     public readonly config: TopicConfig,
-    private readonly _window = window,
+    protected readonly _window = window,
   ) {}
 
   emit(value: T): void {

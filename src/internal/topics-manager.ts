@@ -28,7 +28,7 @@ export class TopicsManager {
         this.storage.setTopicData(topicData);
       }
 
-      topic = createTopic<T>(topicData);
+      topic = createTopic<T>(topicData, this.storage);
       this.knownTopics.set(config.id, topic);
     }
 
