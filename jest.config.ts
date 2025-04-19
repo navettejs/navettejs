@@ -13,6 +13,7 @@ const jestConfig: Config = {
       },
     ],
   },
+  testEnvironment: 'jsdom',
 };
 
 export default jestConfig;

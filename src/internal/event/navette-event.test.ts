@@ -25,23 +25,20 @@ describe('isNavetteEvent', () => {
     expect(isNavetteEvent(event)).toBe(true);
   });
 
-  test('should return true if the event is a NavetteEvent with end signal', () => {
-    const event = new NavetteEvent('topicA', {
-      type: 'end',
-    });
-
-    expect(isNavetteEvent(event)).toBe(true);
-  });
-
   test('should return false if the event is not a NavetteEvent because of an invalid event type', () => {
-    const event = new CustomEvent('blabla', { detail: { type: 'end' } });
+    const event = new CustomEvent('blabla', {
+      detail: {
+        type: 'value',
+        value: '{"data": "value"}',
+      },
+    });
 
     expect(isNavetteEvent(event)).toBe(false);
   });
 
   test('should return false if the event is not a NavetteEvent because of an invalid detail', () => {
     const event = new CustomEvent('navettejs.topicA', {
-      detail: { type: 'ennnd' },
+      detail: { type: 'valuuue' },
     });
 
     expect(isNavetteEvent(event)).toBe(false);

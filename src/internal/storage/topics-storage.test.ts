@@ -38,7 +38,7 @@ describe('WindowTopicsStorage', () => {
         },
       },
     };
-    storage = new WindowTopicsStorage(fakeGlobal as unknown as Window);
+    storage = new WindowTopicsStorage(fakeGlobal);
   });
 
   describe('getTopicData', () => {
@@ -84,7 +84,7 @@ describe('WindowTopicsStorage', () => {
     test('should create the navettejs storage object in the global object if not present', () => {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const fakeGlobal: any = {};
-      new WindowTopicsStorage(fakeGlobal as Window);
+      new WindowTopicsStorage(fakeGlobal);
 
       expect(fakeGlobal.navettejs).toEqual({
         topics: {},
@@ -92,8 +92,7 @@ describe('WindowTopicsStorage', () => {
     });
 
     test('should not override the navettejs storage object in the global object if present', () => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const fakeGlobal: any = {
+      const fakeGlobal = {
         navettejs: {
           topics: {
             test: {},
