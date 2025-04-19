@@ -14,7 +14,7 @@ export class ReplayTopic<
   constructor(
     config: ReplayTopicConfig,
     private readonly storage: TopicsStorage,
-    readonly _window = window,
+    readonly _window: EventTarget = window,
   ) {
     super(config, _window);
   }

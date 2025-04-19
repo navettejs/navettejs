@@ -18,6 +18,8 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
 
+    "esModuleInterop": true,
+
     "types": ["jest"]
   },
   "include": ["src/**/*.ts"]

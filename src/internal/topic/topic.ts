@@ -6,7 +6,6 @@ export interface Topic<T extends JSONCompatible<T>> {
   readonly config: TopicConfig;
 
   emit(value: T): void;
-  end(): void;
 
   subscribe(subscriber: Subscriber<T>): void;
   unsubscribe(subscriber: Subscriber<T>): void;

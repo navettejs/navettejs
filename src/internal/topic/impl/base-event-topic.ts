@@ -16,7 +16,7 @@ export class BaseEventTopic<T extends JSONCompatible<T>> implements Topic<T> {
 
   constructor(
     public readonly config: BaseTopicConfig,
-    protected readonly _window = window,
+    protected readonly _window: EventTarget = window,
   ) {}
 
   emit(value: T): void {
@@ -28,24 +28,12 @@ export class BaseEventTopic<T extends JSONCompatible<T>> implements Topic<T> {
     );
   }
 
-  end(): void {
-    this._window.dispatchEvent(
-      new NavetteEvent(this.config.id, {
-        type: 'end',
-      }),
-    );
-  }
-
   subscribe(subscriber: Subscriber<T>): void {
     const listener: EventListenerOrEventListenerObject = (ev: Event): void => {
       if (isNavetteEvent(ev)) {
         switch (ev.detail.type) {
           case 'value':
             subscriber.on(JSON.parse(ev.detail.value));
-            break;
-          case 'end':
-            subscriber.end();
-            this.unsubscribe(subscriber);
             break;
         }
       } else {

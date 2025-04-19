@@ -4,14 +4,10 @@ export function getEventName(topicId: string): string {
   return `${EVENT_NAME_PREFIX}.${topicId}`;
 }
 
-export type NavetteEventData =
-  | {
-      type: 'value';
-      value: string;
-    }
-  | {
-      type: 'end';
-    };
+export type NavetteEventData = {
+  type: 'value';
+  value: string;
+};
 
 export class NavetteEvent extends CustomEvent<NavetteEventData> {
   constructor(topicId: string, data: NavetteEventData) {
@@ -34,8 +30,6 @@ export function isNavetteEvent(event: Event): event is NavetteEvent {
         return (
           'value' in event.detail && typeof event.detail.value === 'string'
         );
-      case 'end':
-        return true;
       default:
         return false;
     }

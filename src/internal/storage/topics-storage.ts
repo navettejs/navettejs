@@ -21,7 +21,7 @@ interface WindowTopicsData {
 export class WindowTopicsStorage implements TopicsStorage {
   private data: WindowTopicsData;
 
-  constructor(_window: Window = window) {
+  constructor(_window: object = window) {
     if (
       (_window as unknown as { navettejs: unknown }).navettejs === undefined
     ) {

@@ -7,7 +7,7 @@ export interface EventTopicConfig extends BaseTopicConfig {
 }
 
 export class EventTopic<T extends JSONCompatible<T>> extends BaseEventTopic<T> {
-  constructor(config: EventTopicConfig, _window = window) {
+  constructor(config: EventTopicConfig, _window: EventTarget = window) {
     super(config, _window);
   }
 }
