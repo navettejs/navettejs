@@ -34,3 +34,7 @@ coverage
 
 # ESLint
 .eslintcache
+
+# stryker temp files
+.stryker-tmp
+reports
