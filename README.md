@@ -95,7 +95,7 @@ interface MyData {
 
 const topic = manager.topic<MyData>({
   id: 'unique_id',
-  mode: TopicMode.EVENT
+  mode: TopicMode.REPLAY
 });
 
 topic.emit({ foo: '1', bar: 1 });
