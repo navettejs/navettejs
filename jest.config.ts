@@ -13,6 +13,7 @@ const jestConfig: Config = {
       },
     ],
   },
+  testPathIgnorePatterns: ['.stryker-tmp'],
   testEnvironment: 'jsdom',
 };
 

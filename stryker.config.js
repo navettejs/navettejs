@@ -6,4 +6,7 @@ export default {
   coverageAnalysis: 'off',
   tsconfigFile: 'tsconfig.test.json',
   mutate: ['src/**/*.ts', '!src/**/*.test.ts'],
+  jest: {
+    configFile: 'jest-stryker.config.ts',
+  },
 };
