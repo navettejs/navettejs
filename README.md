@@ -1,8 +1,10 @@
 # NavetteJS
 
-![navettejs logo](assets/small_logo_whitebg.png)
+![navettejs logo](https://github.com/navettejs/navettejs/blob/main/assets/small_logo_whitebg.png?raw=true)
 
 **The Lightweight Frontend Event Bus**
+
+![npm badge](https://img.shields.io/npm/v/%40navettejs%2Fnavettejs)
 
 NavetteJS provides a lightweight event bus system
 for your frontends and microfrontends.
