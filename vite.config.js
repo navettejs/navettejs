@@ -19,6 +19,14 @@ export default defineConfig({
     cp({
       targets: [
         {
+          src: './README.md',
+          dest: './dist',
+        },
+        {
+          src: './assets',
+          dest: './dist/assets',
+        },
+        {
           // Copy and clean package.json
           src: './package.json',
           dest: './dist',
