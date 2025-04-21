@@ -52,5 +52,17 @@
       "prettier --write",
       "eslint --cache --fix"
     ]
-  }
+  },
+  "keywords": [
+    "microfrontend",
+    "frontend",
+    "event",
+    "event bus",
+    "pubsub",
+    "subscription",
+    "publish",
+    "typescript",
+    "javascript",
+    "library"
+  ]
 }
