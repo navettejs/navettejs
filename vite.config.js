@@ -27,6 +27,10 @@ export default defineConfig({
           dest: './dist/assets',
         },
         {
+          src: './.releaserc.yml',
+          dest: './dist',
+        },
+        {
           // Copy and clean package.json
           src: './package.json',
           dest: './dist',
