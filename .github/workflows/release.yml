@@ -31,8 +31,11 @@ jobs:
           cache: yarn
       - name: Install dependencies
         run: yarn install
+      - name: Build
+        run: yarn build
       - name: Release
+        working-directory: dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: yarn semantic-release
+        run: npx semantic-release
