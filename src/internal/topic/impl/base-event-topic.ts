@@ -52,4 +52,11 @@ export class BaseEventTopic<T extends JSONCompatible<T>> implements Topic<T> {
       this.listeners.delete(subscriber);
     }
   }
+
+  unsubscribeAll(): void {
+    this.listeners.forEach((listener) => {
+      this._window.removeEventListener(getEventName(this.config.id), listener);
+    });
+    this.listeners.clear();
+  }
 }

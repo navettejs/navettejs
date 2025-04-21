@@ -38,4 +38,11 @@ export class TopicsManager {
 
     return topic;
   }
+
+  destroy(): void {
+    this.knownTopics.forEach((topic) => {
+      topic.unsubscribeAll();
+    });
+    this.knownTopics.clear();
+  }
 }

@@ -54,6 +54,9 @@
       "eslint --cache --fix"
     ]
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "microfrontend",
     "frontend",

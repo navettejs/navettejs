@@ -9,4 +9,5 @@ export interface Topic<T extends JSONCompatible<T>> {
 
   subscribe(subscriber: Subscriber<T>): void;
   unsubscribe(subscriber: Subscriber<T>): void;
+  unsubscribeAll(): void;
 }
