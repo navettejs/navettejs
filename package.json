@@ -11,6 +11,9 @@
     "prettify": "prettier --write .",
     "postinstall": "husky"
   },
+  "repository": {
+    "url": "https://github.com/navettejs/navettejs"
+  },
   "main": "./dist/navette.umd.js",
   "module": "./dist/navette.es.js",
   "exports": {
