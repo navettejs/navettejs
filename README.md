@@ -80,6 +80,9 @@ topic.emit({ foo: '3', bar: 3 });
 // console.log -> '3:3'
 ```
 
+**Note: the `topic` method can be called multiple times with the same id, the same topic object
+will be returned each time.**
+
 ### Replay Topics
 
 Replay topics behave like event topics, except that new subscribers
@@ -120,7 +123,7 @@ topic.emit({ foo: '4', bar: 4 });
 // console.log -> '4:4'
 ```
 
-## Unsubscribe
+### Unsubscribe
 
 You may unsubscribe a subscriber to stop receiving values.
 It will also prevent memory leaks if your microfrontend is about to stop.
@@ -154,4 +157,15 @@ topic.unsubscribe(subscriber);
 
 topic.emit({ foo: '1', bar: 1 });
 // nothing happens.
+```
+
+### Destroy and cleanup
+
+You may destroy the topic manager to stop all topics subscriptions.
+
+**Note: only subscriptions made with topics created by this manager's 
+instance will be unsubscribed.**
+
+```ts
+manager.destroy();
 ```
