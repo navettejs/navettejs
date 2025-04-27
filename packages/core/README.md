@@ -14,9 +14,9 @@ with tools like RxJS or React hooks.
 
 Under the hood, NavetteJS uses HTML CustomEvents
 for communication, enabling multiple versions
-to coexist without conflict. It simplifies 
+to coexist without conflict. It simplifies
 communication between microfrontends
-without requiring the same version to be deployed 
+without requiring the same version to be deployed
 across all of them.
 
 ## Setup
@@ -59,7 +59,7 @@ interface MyData {
 
 const topic = manager.topic<MyData>({
   id: 'unique_id',
-  mode: TopicMode.EVENT
+  mode: TopicMode.EVENT,
 });
 
 topic.emit({ foo: '1', bar: 1 });
@@ -68,7 +68,7 @@ const subscriber: Subscriber = {
   on: (data: MyData) => {
     // Logs to console as '<data.foo>:<data.bar>'
     console.log(data.foo + ':' + data.bar);
-  }
+  },
 };
 
 topic.subscribe(subscriber);
@@ -100,7 +100,7 @@ interface MyData {
 
 const topic = manager.topic<MyData>({
   id: 'unique_id',
-  mode: TopicMode.REPLAY
+  mode: TopicMode.REPLAY,
 });
 
 topic.emit({ foo: '1', bar: 1 });
@@ -110,7 +110,7 @@ const subscriber: Subscriber = {
   on: (data: MyData) => {
     // Logs to console as '<data.foo>:<data.bar>'
     console.log(data.foo + ':' + data.bar);
-  }
+  },
 };
 
 topic.subscribe(subscriber);
@@ -138,14 +138,14 @@ interface MyData {
 
 const topic = manager.topic<MyData>({
   id: 'unique_id',
-  mode: TopicMode.EVENT
+  mode: TopicMode.EVENT,
 });
 
 const subscriber: Subscriber = {
   on: (data: MyData) => {
     // Logs to console as '<data.foo>:<data.bar>'
     console.log(data.foo + ':' + data.bar);
-  }
+  },
 };
 
 topic.subscribe(subscriber);
@@ -163,7 +163,7 @@ topic.emit({ foo: '1', bar: 1 });
 
 You may destroy the topic manager to stop all topics subscriptions.
 
-**Note: only subscriptions made with topics created by this manager's 
+**Note: only subscriptions made with topics created by this manager's
 instance will be unsubscribed.**
 
 ```ts

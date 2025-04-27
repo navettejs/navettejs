@@ -6,11 +6,11 @@ import eslintConfigPrettier from 'eslint-config-prettier/flat';
 
 export default defineConfig([
   globalIgnores([
-    './coverage',
-    './dist',
-    './node_modules',
-    './.pnp*',
-    './vite.config.js',
+    './**/coverage',
+    './**/dist',
+    './**/node_modules',
+    './**/.pnp*',
+    './**/vite.config.js',
   ]),
   {
     files: ['**/*.{js,mjs,cjs,ts}'],

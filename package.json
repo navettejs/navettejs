@@ -1,63 +1,37 @@
 {
-  "name": "@navettejs/navettejs",
-  "private": false,
-  "version": "1.0.1",
+  "name": "@navettejs/workspace",
+  "version": "0.0.0",
   "type": "module",
+  "private": true,
   "scripts": {
-    "build": "tsc && vite build",
-    "test": "tsc --project tsconfig.test.json && jest",
-    "test:mutation": "stryker run",
-    "lint": "eslint",
-    "prettify": "prettier --write .",
+    ":lint": "eslint",
+    ":prettify": "prettier --write .",
     "postinstall": "husky",
     "prepack": "pinst --disable",
     "postpack": "pinst --enable"
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "repository": {
     "url": "https://github.com/navettejs/navettejs"
   },
-  "files": [
-    "./assets",
-    "./dist",
-    "./README.md",
-    "./package.json"
-  ],
-  "main": "./dist/navette.umd.js",
-  "module": "./dist/navette.es.js",
-  "exports": {
-    ".": {
-      "import": "./dist/navette.es.js",
-      "require": "./dist/navette.umd.js"
-    }
-  },
-  "types": "./dist/main.d.ts",
   "devDependencies": {
     "@eslint/js": "^9.24.0",
-    "@stryker-mutator/core": "^8.7.1",
-    "@stryker-mutator/jest-runner": "^8.7.1",
-    "@stryker-mutator/typescript-checker": "^8.7.1",
-    "@types/jest": "^29.5.14",
-    "@types/jsdom": "^21.1.7",
-    "@types/node": "^22.14.1",
+    "@types/node": "^22.15.2",
     "eslint": "^9.24.0",
     "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-prettier": "^5.2.6",
-    "globals": "^16.0.0",
     "husky": "^9.1.7",
-    "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0",
     "lint-staged": "^15.5.1",
     "pinst": "^3.0.0",
     "prettier": "3.5.3",
     "semantic-release": "^24.2.3",
-    "ts-jest": "^29.3.2",
+    "semantic-release-yarn": "^3.0.2",
     "ts-node": "^10.9.2",
-    "type-testing": "^0.2.0",
-    "typescript": "~5.7.2",
-    "typescript-eslint": "^8.29.1",
-    "vite": "^6.2.0",
-    "vite-plugin-cp": "^6.0.0",
-    "vite-plugin-dts": "4.5.0"
+    "turbo": "^2.5.2",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.31.0"
   },
   "packageManager": "yarn@4.9.1+sha512.f95ce356460e05be48d66401c1ae64ef84d163dd689964962c6888a9810865e39097a5e9de748876c2e0bf89b232d583c33982773e9903ae7a76257270986538",
   "lint-staged": {
@@ -65,21 +39,5 @@
       "prettier --write",
       "eslint --cache --fix"
     ]
-  },
-  "publishConfig": {
-    "access": "public",
-    "provenance": true
-  },
-  "keywords": [
-    "microfrontend",
-    "frontend",
-    "event",
-    "event bus",
-    "pubsub",
-    "subscription",
-    "publish",
-    "typescript",
-    "javascript",
-    "library"
-  ]
+  }
 }
