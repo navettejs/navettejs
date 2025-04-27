@@ -1,10 +1,10 @@
 # NavetteJS
 
-![navettejs logo](https://github.com/navettejs/navettejs/blob/main/assets/small_logo_whitebg.png?raw=true)
+![navettejs logo](https://github.com/navettejs/navettejs/blob/alpha/packages/core/assets/small_logo_whitebg.png?raw=true)
 
 **The Lightweight Frontend Event Bus**
 
-![npm badge](https://img.shields.io/npm/v/%40navettejs%2Fnavettejs)
+![npm badge](https://img.shields.io/npm/v/%40navettejs%2Fcore)
 
 NavetteJS provides a lightweight event bus system
 for your frontends and microfrontends.
@@ -19,12 +19,19 @@ communication between microfrontends
 without requiring the same version to be deployed
 across all of them.
 
+# @navettejs/core
+
+This library provides the core features of NavetteJS
+without any dependencies. Use it if your want
+to create your own integration with your favorite
+framework.
+
 ## Setup
 
 In your frontend or microfrontend, install it:
 
 ```sh
-npm install @navettejs/navettejs
+npm install @navettejs/core
 ```
 
 Then, create one instance of `TopicManager` as a
@@ -35,7 +42,7 @@ This class provides all the methods to create/use
 topics.
 
 ```ts
-import { TopicsManager } from '@navettejs/navettejs';
+import { TopicsManager } from '@navettejs/core';
 
 const manager = new TopicsManager();
 ```
@@ -50,7 +57,7 @@ New subscribers won't receive any previously emitted values.
 Topics must have a unique id, it allows multiple microfrontends to share the same topic by name.
 
 ```ts
-import { Subscriber, TopicMode } from '@navettejs/navettejs';
+import { Subscriber, TopicMode } from '@navettejs/core';
 
 interface MyData {
   foo: string;
@@ -91,7 +98,7 @@ immediately receive the last emitted value upon subscription.
 Useful kind of topic to store a state, like an access token or a user id.
 
 ```ts
-import { Subscriber, TopicMode } from '@navettejs/navettejs';
+import { Subscriber, TopicMode } from '@navettejs/core';
 
 interface MyData {
   foo: string;
@@ -129,7 +136,7 @@ You may unsubscribe a subscriber to stop receiving values.
 It will also prevent memory leaks if your microfrontend is about to stop.
 
 ```ts
-import { Subscriber, TopicMode } from '@navettejs/navettejs';
+import { Subscriber, TopicMode } from '@navettejs/core';
 
 interface MyData {
   foo: string;
