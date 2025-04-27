@@ -38,8 +38,7 @@ jobs:
       - name: Build
         run: yarn build
       - name: Release
-        working-directory: dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release
+        run: yarn dlx semantic-release
