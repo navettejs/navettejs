@@ -14,7 +14,7 @@
     "packages/*"
   ],
   "repository": {
-    "url": "https://github.com/navettejs/navettejs"
+    "url": "https://github.com/victorlevasseur/navettejs"
   },
   "devDependencies": {
     "@eslint/js": "^9.24.0",
