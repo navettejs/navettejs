@@ -2,8 +2,8 @@ import {
   TopicsStorage,
   TopicStorageData,
   WindowTopicsStorage,
-} from './topics-storage';
-import { TopicMode } from '../topic/topic-config';
+} from './topics-storage.ts';
+import { TopicMode } from '../topic/topic-config.ts';
 
 describe('WindowTopicsStorage', () => {
   let storage: TopicsStorage;
