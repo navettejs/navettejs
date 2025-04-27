@@ -1,0 +1,19 @@
+import path from 'node:path';
+import { defineConfig } from 'vite';
+import dts from 'vite-plugin-dts';
+
+export default defineConfig({
+  build: {
+    sourcemap: true,
+    lib: {
+      entry: path.resolve(__dirname, 'src/main.js'),
+      name: 'navette-rxjs',
+      fileName: (format) => `navette-rxjs.${format}.js`,
+    },
+  },
+  plugins: [
+    dts({
+      rollupTypes: true,
+    }),
+  ],
+});
