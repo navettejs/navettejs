@@ -2,14 +2,14 @@
   "$schema": "https://turborepo.com/schema.json",
   "tasks": {
     "build": {
-      "dependsOn": ["check-types"],
+      "dependsOn": ["check-types", "^build"],
       "outputs": ["dist/**"]
     },
     "check-types": {
       "dependsOn": ["^check-types"]
     },
     "test": {
-      "dependsOn": ["^test"]
+      "dependsOn": ["^build", "^test"]
     },
     "mutation-test": {
       "dependsOn": ["^mutation-test"]

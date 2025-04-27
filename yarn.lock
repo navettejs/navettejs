@@ -1461,7 +1461,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@navettejs/core@workspace:packages/core":
+"@navettejs/core@workspace:packages/core, @navettejs/core@workspace:~":
   version: 0.0.0-use.local
   resolution: "@navettejs/core@workspace:packages/core"
   dependencies:
@@ -1482,6 +1482,33 @@ __metadata:
     vite: "npm:^6.2.0"
     vite-plugin-cp: "npm:^6.0.0"
     vite-plugin-dts: "npm:4.5.0"
+  languageName: unknown
+  linkType: soft
+
+"@navettejs/rxjs@workspace:packages/rxjs":
+  version: 0.0.0-use.local
+  resolution: "@navettejs/rxjs@workspace:packages/rxjs"
+  dependencies:
+    "@navettejs/core": "workspace:~"
+    "@stryker-mutator/core": "npm:^8.7.1"
+    "@stryker-mutator/jest-runner": "npm:^8.7.1"
+    "@stryker-mutator/typescript-checker": "npm:^8.7.1"
+    "@types/jest": "npm:^29.5.14"
+    "@types/jsdom": "npm:^21.1.7"
+    "@types/node": "npm:^22.14.1"
+    globals: "npm:^16.0.0"
+    jest: "npm:^29.7.0"
+    jest-environment-jsdom: "npm:^29.7.0"
+    pinst: "npm:^3.0.0"
+    ts-jest: "npm:^29.3.2"
+    ts-node: "npm:^10.9.2"
+    type-testing: "npm:^0.2.0"
+    typescript: "npm:~5.7.2"
+    vite: "npm:^6.2.0"
+    vite-plugin-cp: "npm:^6.0.0"
+    vite-plugin-dts: "npm:4.5.0"
+  peerDependencies:
+    "@navettejs/core": "workspace:~"
   languageName: unknown
   linkType: soft
 
