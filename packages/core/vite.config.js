@@ -1,7 +1,6 @@
 import path from 'node:path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
-import cp from 'vite-plugin-cp';
 
 export default defineConfig({
   build: {
