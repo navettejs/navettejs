@@ -16,47 +16,5 @@ export default defineConfig({
     dts({
       rollupTypes: true,
     }),
-    cp({
-      targets: [
-        {
-          src: './README.md',
-          dest: './dist',
-        },
-        {
-          src: './assets',
-          dest: './dist/assets',
-        },
-        {
-          src: './.releaserc.yml',
-          dest: './dist',
-        },
-        {
-          // Copy and clean package.json
-          src: './package.json',
-          dest: './dist',
-          transform(buf) {
-            const pkg = JSON.parse(buf.toString());
-
-            delete pkg['scripts'];
-            delete pkg['devDependencies'];
-            delete pkg['packageManager'];
-            delete pkg['lint-staged'];
-
-            return (
-              JSON.stringify(
-                {
-                  ...pkg,
-                  private: false,
-                },
-                null,
-                2,
-              )
-                // Replace all relative path to ./dist with ./
-                .replace(/"\.\/dist\//g, '"./')
-            );
-          },
-        },
-      ],
-    }),
   ],
 });
