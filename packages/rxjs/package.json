@@ -16,13 +16,15 @@
   "module": "./dist/navette-rxjs.es.js",
   "exports": {
     ".": {
+      "types": "./dist/main.d.ts",
       "import": "./dist/navette-rxjs.es.js",
       "require": "./dist/navette-rxjs.umd.js"
     }
   },
   "types": "./dist/main.d.ts",
   "peerDependencies": {
-    "@navettejs/core": "workspace:~"
+    "@navettejs/core": "workspace:~",
+    "rxjs": "^7.0.0"
   },
   "devDependencies": {
     "@navettejs/core": "workspace:~",
@@ -36,6 +38,7 @@
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "pinst": "^3.0.0",
+    "rxjs": "^7.8.2",
     "ts-jest": "^29.3.2",
     "ts-node": "^10.9.2",
     "type-testing": "^0.2.0",
