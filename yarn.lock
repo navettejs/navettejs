@@ -1500,6 +1500,7 @@ __metadata:
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
     pinst: "npm:^3.0.0"
+    rxjs: "npm:^7.8.2"
     ts-jest: "npm:^29.3.2"
     ts-node: "npm:^10.9.2"
     type-testing: "npm:^0.2.0"
@@ -1509,6 +1510,7 @@ __metadata:
     vite-plugin-dts: "npm:4.5.0"
   peerDependencies:
     "@navettejs/core": "workspace:~"
+    rxjs: ^7.0.0
   languageName: unknown
   linkType: soft
 
@@ -8767,7 +8769,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rxjs@npm:~7.8.1":
+"rxjs@npm:^7.8.2, rxjs@npm:~7.8.1":
   version: 7.8.2
   resolution: "rxjs@npm:7.8.2"
   dependencies:
